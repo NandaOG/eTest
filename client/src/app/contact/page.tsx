@@ -3,20 +3,20 @@ import Hero from "@/components/section/services/Hero";
 // import Map from "@/components/section/Map";
 
 export const metadata = {
-    title: "Contact Us | Cyberpeak IT Solutions",
+    title: "Contact Us | Luxe Apparel",
     description:
-        "We're here to assist you! Contact us for any questions, feedback, or support – we’d love to hear from you and help with anything you need.",
+        "We're here to help you find your perfect style! Contact us for styling advice, product questions, or personalized shopping assistance.",
 };
 
 export default function ContactUs() {
     const heroData = {
         title: "Contact Us",
         description:
-        "We're here to assist you! Contact us for any questions, feedback, or support – we’d love to hear from you and help with anything you need.",
-        imageSrc: "/images/contact.jpg",
-        imageAlt: "Cyberpeak team collaborating",
-        buttonText: "Explore Our Services",
-        buttonLink: "/services",
+        "We're here to help you find your perfect style! Contact us for styling advice, product questions, or personalized shopping assistance.",
+        imageSrc: "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg",
+        imageAlt: "Fashion consultation",
+        buttonText: "Shop Collection",
+        buttonLink: "/shop",
     };
 
     return (

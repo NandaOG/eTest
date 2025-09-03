@@ -8,50 +8,50 @@ import Button from "../ui/Button";
 // Default project data
 const defaultProjects = [
   {
-    id: "choueri",
-    title: "The Choueri",
-    description: "Choueri Real Estate will never settle for anything less than offering our clients the best in quality projects.",
-    industry: "Real Estate",
-    type: "Web Application, Ecommerce, Wordpress",
-    date: "April 20, 2023",
-    image: "/images/portfolio/Choueri.png",
-    link: "https://choueri-uae.com"
+    id: "summer-collection",
+    title: "Summer Elegance",
+    description: "Our latest summer collection featuring lightweight fabrics, vibrant colors, and breathable designs perfect for warm weather sophistication.",
+    industry: "Fashion",
+    type: "Seasonal Collection",
+    date: "Spring 2024",
+    image: "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg",
+    link: "/collections/summer"
 
   },
   {
-    id: "theumashow",
-    title: "The Uma Show",
-    description: "Practical tips, strategies and insights to help you in your quest for increasing vitality and quality of life.",
-    industry: "Ecommerce",
-    type: "Web Application, Ecommerce, Shopify",
-    date: "March 7, 2023",
-    image: "/images/portfolio/theumashow.jpg",
-    link: "https://theumashow.com/"
+    id: "formal-wear",
+    title: "Executive Collection",
+    description: "Professional attire that commands respect. Tailored suits, elegant blazers, and sophisticated pieces for the modern executive.",
+    industry: "Fashion",
+    type: "Business Collection",
+    date: "Fall 2024",
+    image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg",
+    link: "/collections/executive"
   },
   {
-    id: "consopharma",
-    title: "Consopharma",
-    description: "We are thus considered as top Orthopedic Implants company.",
-    industry: "Medical",
-    type: "Website",
-    date: "July 7, 2023",
-    image: "/images/portfolio/consopharma.png",
-    link: "https://consopharma.com"
+    id: "luxury-accessories",
+    title: "Luxury Accessories",
+    description: "Exquisite accessories that elevate any outfit. From designer handbags to statement jewelry, find the perfect finishing touch.",
+    industry: "Fashion",
+    type: "Accessories",
+    date: "Winter 2024",
+    image: "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg",
+    link: "/collections/accessories"
 
   },
 ];
 
 export default function Project({
   projects = defaultProjects,
-  ctaText = "Wanna know more about our work?",
-  ctaButton = { text: "View More", href: "/portfolio" },
+  ctaText = "Ready to explore our full collection?",
+  ctaButton = { text: "Shop Now", href: "/shop" },
   gradient = "bg-gradient-to-br from-white via-[#002440] to-white", // default gradient
 }) {
   return (
     <section
       className={`relative w-full py-20 px-10 md:px-20 ${gradient} text-white overflow-hidden`}
     >
-      <Title title="Our Work" />
+      <Title title="Featured Collections" />
       <div className="relative pt-10 flex flex-wrap justify-between gap-8">
         {projects.map((project, index) => (
           <motion.div

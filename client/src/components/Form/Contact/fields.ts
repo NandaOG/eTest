@@ -22,10 +22,17 @@ export const fields = [
         required: false,
     },
     {
-        name: "message",
-        label: "Your Message",
+        name: "subject",
+        label: "Subject",
         type: "text",
-        placeholder: "Write your message here...",
+        placeholder: "How can we help you?",
+        required: true,
+    },
+    {
+        name: "message",
+        label: "Message",
+        type: "text",
+        placeholder: "Tell us about your style preferences or questions...",
         required: true,
     },
 ];

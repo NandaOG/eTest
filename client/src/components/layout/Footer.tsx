@@ -13,13 +13,13 @@ const Footer = () => {
                     {/* Left Section (Logo & Text) */}
                     <div className="flex flex-col items-center items-start space-y-4 md:text-left">
                         <div className="flex justify-start">
-                            <Image src={logo_white} alt="Company Logo" width={350} height={100} priority />
+                            <div className="text-4xl font-bold text-white">Luxe Apparel</div>
                         </div>
-                        <p className="text-2xl mt-5 ">Premium IT solutions, tailored to fit your needs, at a price you’ll love.</p>
+                        <p className="text-2xl mt-5 ">Premium fashion collections, crafted with elegance, designed for the modern lifestyle.</p>
                     </div>
                     {/* Right Section (Social Links) */}
                     <div className="mt-10 md:mt-0">
-                        <Image src="/images/Partner_BigCommerce.png" alt="Partner Logo" width={200} height={80} />
+                        <div className="text-white text-lg">Premium Fashion Since 2020</div>
                     </div>
                 </div>
                 {/* Footer Middle */}
@@ -27,12 +27,12 @@ const Footer = () => {
                     <nav aria-label="Footer Navigation" className="flex flex-col md:flex-row md:gap-15 justify-between pt-20  [&_a]:hover:text-[#002440] [&_a]:transition-all [&_a]:duration-200 [&_li]:my-3 ">
                         {/* Column 1 */}
                         <div className="flex flex-col  my-5 md:my-0">
-                            <h3 className="text-3xl md:text-2xl text-[#002440] ">Company</h3>
+                            <h3 className="text-3xl md:text-2xl text-[#002440] ">Shop</h3>
                             <ul className="space-y-1 text-xl md:text-base">
-                                <li><Link href="/about" >About</Link></li>
-                                <li><Link href="/contact" >Contact</Link></li>
-                                <li><Link href="/portfolio" >Portfolio</Link></li>
-                                <li><Link href="/services">Services</Link></li>
+                                <li><Link href="/women" >Women</Link></li>
+                                <li><Link href="/men" >Men</Link></li>
+                                <li><Link href="/accessories" >Accessories</Link></li>
+                                <li><Link href="/sale">Sale</Link></li>
                             </ul>
                         </div>
 
@@ -49,56 +49,56 @@ const Footer = () => {
                     <nav aria-label="Footer Navigation" className="flex flex-col md:flex-row md:gap-15 justify-between md:py-20  [&_a]:hover:text-[#002440] [&_a]:transition-all [&_a]:duration-200 [&_li]:my-3 flex-wrap">
                         {/* Column 1 */}
                         <div className="flex flex-col  my-5 md:my-0">
-                            <h3 className="text-3xl md:text-2xl text-[#002440] "><Link href="/services/ecommerce">Ecommerce</Link></h3>
+                            <h3 className="text-3xl md:text-2xl text-[#002440] "><Link href="/collections">Collections</Link></h3>
                             <ul className="space-y-1 text-xl md:text-base">
-                                <li><Link href="/services/ecommerce/magento">Magento</Link></li>
-                                <li><Link href="/services/ecommerce/bigcommerce" >BigCommerce</Link></li>
-                                <li><Link href="/services/ecommerce/shopify" >Shopify</Link></li>
-                                <li><Link href="/services/ecommerce/demandware" >Demandware</Link></li>
-                                <li><Link href="/services/headless-pwa" >Headless PWA</Link></li>
+                                <li><Link href="/collections/summer">Summer</Link></li>
+                                <li><Link href="/collections/winter" >Winter</Link></li>
+                                <li><Link href="/collections/formal" >Formal</Link></li>
+                                <li><Link href="/collections/casual" >Casual</Link></li>
+                                <li><Link href="/collections/designer" >Designer</Link></li>
                             </ul>
                         </div>
 
                         {/* Column 2 */}
                         <div className="flex flex-col  my-5 md:my-0 ">
-                            <h3 className="text-3xl  md:text-2xl text-[#002440]"><Link href="/services/data-analysis" >Data Analysis</Link></h3>
+                            <h3 className="text-3xl  md:text-2xl text-[#002440]"><Link href="/about" >Company</Link></h3>
                             <ul className="space-y-1 text-xl md:text-base">
-                                <li><Link href="/services/data-analysis/primary" >Primary</Link></li>
-                                <li><Link href="/services/data-analysis/secondary" >Secondary</Link></li>
-                                <li><Link href="/services/data-analysis/quantitative" >Quantitative</Link></li>
-                                <li><Link href="/services/data-analysis/qualitative" >Qualitative</Link></li>
+                                <li><Link href="/about" >About Us</Link></li>
+                                <li><Link href="/contact" >Contact</Link></li>
+                                <li><Link href="/careers" >Careers</Link></li>
+                                <li><Link href="/sustainability" >Sustainability</Link></li>
                             </ul>
                         </div>
 
                         <div className="flex flex-col  my-5 md:my-0">
-                            <h3 className="text-3xl md:text-2xl text-[#002440]"><Link href="/services/marketing" >Marketing</Link></h3>
+                            <h3 className="text-3xl md:text-2xl text-[#002440]"><Link href="/customer-care" >Customer Care</Link></h3>
                             <ul className="space-y-1 text-xl md:text-base">
-                                <li><Link href="/services/marketing/seo" >SEO Optimization</Link></li>
-                                <li><Link href="/services/marketing/digital-marketing">Digital Marketing</Link></li>
-                                <li><Link href="/services/marketing/analytics">Analytics & Insights</Link></li>
+                                <li><Link href="/size-guide" >Size Guide</Link></li>
+                                <li><Link href="/shipping">Shipping Info</Link></li>
+                                <li><Link href="/returns">Returns</Link></li>
                             </ul>
                         </div>
                         {/* Column 3 */}
                         <div className="flex flex-col  my-5 md:my-0 ">
-                            <h3 className="text-3xl  md:text-2xl text-[#002440]"><Link href="/services/erp-integration" >ERP Integration</Link></h3>
+                            <h3 className="text-3xl  md:text-2xl text-[#002440]"><Link href="/brands" >Brands</Link></h3>
                             <ul className="space-y-1 text-xl md:text-base">
-                                <li><Link href="/services/erp-integration/epicor" >Epicor Integration</Link></li>
-                                <li><Link href="/services/erp-integration/ddi" >DDI Integration</Link></li>
-                                <li><Link href="/services/erp-integration/netsuite" >Netsuite Integration</Link></li>
-                                <li><Link href="/services/erp-integration/lightspeed" >Lightspeed Integration</Link></li>
+                                <li><Link href="/brands/valentino" >Valentino</Link></li>
+                                <li><Link href="/brands/armani" >Armani</Link></li>
+                                <li><Link href="/brands/versace" >Versace</Link></li>
+                                <li><Link href="/brands/prada" >Prada</Link></li>
                             </ul>
                         </div>
 
 
                         {/* Column 4 */}
                         <div className="flex flex-col  my-5 md:my-0">
-                            <h3 className="text-3xl md:text-2xl text-[#002440]"><Link href="/services/mobile-app" >Mobile App</Link></h3>
+                            <h3 className="text-3xl md:text-2xl text-[#002440]"><Link href="/exclusive" >Exclusive</Link></h3>
                             <ul className="space-y-1 text-xl md:text-base">
-                                <li><Link href="/services/mobile-app/ios" > iOS </Link></li>
-                                <li><Link href="/services/mobile-app/android">Android </Link></li>
-                                <li><Link href="/services/mobile-app/cross-platform">Cross-Platform </Link></li>
-                                <li><Link href="/services/mobile-app/react-native">React Native </Link></li>
-                                <li><Link href="/services/mobile-app/flutter">Flutter </Link></li>
+                                <li><Link href="/vip" > VIP Members </Link></li>
+                                <li><Link href="/limited-edition">Limited Edition </Link></li>
+                                <li><Link href="/pre-order">Pre-Orders </Link></li>
+                                <li><Link href="/custom-tailoring">Custom Tailoring </Link></li>
+                                <li><Link href="/personal-styling">Personal Styling </Link></li>
                             </ul>
                         </div>
 
@@ -116,7 +116,7 @@ const Footer = () => {
 
                         {/* ✅ Center text */}
                         <div className="text-center flex-1 order-1 md:order-2 text-lg">
-                            © {new Date().getFullYear()} CyberPeak IT Solutions Pvt. Ltd.&nbsp; All rights reserved.
+                            © {new Date().getFullYear()} Luxe Apparel&nbsp; All rights reserved.
                         </div>
                     </div>
                 </div>

@@ -6,14 +6,14 @@ export default function About() {
   return (
     <section className="w-full py-20 px-10 md:px-20 bg-gradient-to-br from-white via-[#002440] to-[#BF4000] text-white">
       <div className="mx-auto text-center">
-        <Title title="About Cyberpeak" />
+        <Title title="About Luxe Apparel" />
 
         {/* Image & Content */}
         <div className="flex flex-col md:flex-row items-center gap-10 mt-10">
           {/* Image */}
           <motion.img
-            src="/images/CyberPeak IT Solutions Pvt. Ltd..jpeg"
-            alt="About Us"
+            src="https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg"
+            alt="Luxury Fashion Store"
             className="w-full md:w-1/2 rounded-tl-4xl rounded-br-4xl md:rounded-tl-[100px] md:rounded-br-[100px] shadow-lg"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -24,17 +24,17 @@ export default function About() {
           {/* Text & Button */}
           <div className="md:w-1/2 space-y-6 text-left">
             <p className="text-lg leading-relaxed">
-              Cyberpeak is dedicated to providing cutting-edge solutions that enhance security, scalability, and user experience. 
-              We prioritize innovation and reliability to meet the ever-evolving demands of the digital world.
+              Luxe Apparel is dedicated to curating the finest collection of luxury clothing that embodies sophistication and timeless style. 
+              We prioritize quality craftsmanship and exceptional design to meet the discerning tastes of fashion enthusiasts.
             </p>
 
             {/* Bullet Points */}
             <div className="space-y-4">
               {[
-                "Innovative & Scalable Solutions",
-                "Security & Reliability at Core",
-                "User-Centric Approach",
-                "Customizable & Adaptive Tech",
+                "Premium Quality Materials",
+                "Timeless & Elegant Designs",
+                "Sustainable Fashion Practices",
+                "Exceptional Customer Service",
               ].map((point, index) => (
                 <motion.div
                   key={index}

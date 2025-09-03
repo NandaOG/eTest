@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import logo from "./../../../public/logo.png";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import MenuButton from "../ui/MenuButton";
 import MobileMenu from "./MegaMenu";
+import { FaShoppingBag } from "react-icons/fa";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,16 +38,22 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/">
-            <Image
-              src={logo}
-              alt="Logo"
-              className="w-[180px] sm:w-[230px] cursor-pointer"
-            />
+            <div className="text-2xl md:text-3xl font-bold text-[#002440] cursor-pointer">
+              Luxe Apparel
+            </div>
           </Link>
 
-          {/* Menu Button */}
-          <div onClick={toggleMenu}>
-            <MenuButton />
+          {/* Cart and Menu */}
+          <div className="flex items-center gap-4">
+            <Link href="/cart" className="relative p-2">
+              <FaShoppingBag className="text-2xl text-[#002440] hover:text-[#BF4000] transition-colors" />
+              <span className="absolute -top-1 -right-1 bg-[#BF4000] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                0
+              </span>
+            </Link>
+            <div onClick={toggleMenu}>
+              <MenuButton />
+            </div>
           </div>
         </div>
 

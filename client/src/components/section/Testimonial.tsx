@@ -50,24 +50,24 @@ const clients = [
 const testimonials = [
     {
         id: 1,
-        name: 'Anna Scott',
-        position: 'COO',
+        name: 'Isabella Martinez',
+        position: 'Fashion Blogger',
         photo: '/images/client/avatar-f1.png',
-        quote: 'Their approach is not just about delivering results but creating a lasting partnership. It’s been a pleasure working with them.',
+        quote: 'Luxe Apparel has completely transformed my wardrobe. The quality is exceptional and the designs are absolutely stunning. Every piece feels like a work of art.',
     },
     {
         id: 2,
-        name: 'David Kim',
-        position: 'Operations Manager',
+        name: 'James Wellington',
+        position: 'Business Executive',
         photo: '/images/client/avatar-m1.png',
-        quote: 'They not only delivered on their promises but went above and beyond to ensure everything was tailored to our unique requirements.',
+        quote: 'The custom tailoring service is impeccable. My suits fit perfectly and the attention to detail is remarkable. Truly premium quality.',
     },
     {
         id: 3,
-        name: 'Olivia Harris',
-        position: 'Chief Marketing Officer',
+        name: 'Sophia Chen',
+        position: 'Fashion Designer',
         photo: '/images/client/avatar-f2.png',
-        quote: 'We have worked with many agencies in the past, but CyberPeak stands out. Their team brought fresh ideas that truly helped us grow.',
+        quote: 'As a designer myself, I appreciate the craftsmanship and attention to detail in every piece. Luxe Apparel sets the standard for luxury fashion.',
     },
 
 ];
@@ -85,10 +85,10 @@ const Testimonial: React.FC<props> = ({
             <div className="container mx-auto mt-15">
                 <div className="flex bg-[url('/backgrounds/grid.svg')] flex-col md:flex-row items-center justify-between w-full border-2 border-white my-10 p-10 rounded-3xl gap-5">
                     <div className="w-full md:w-1/2">
-                        <h2 className="text-3xl md:text-5xl text-white"><b>Admired clients</b> who’re enjoying the (re)action of our full-fledged services</h2>
+                        <h2 className="text-3xl md:text-5xl text-white"><b>Fashion enthusiasts</b> who love our luxury collections</h2>
                     </div>
                     <div className="w-full md:w-1/2">
-                        <p className="text-lg md:text-3xl text-white">We create a positive impact for our clients by resolving issues and optimizing performance to enhance their small and large-scale software development initiatives.</p>
+                        <p className="text-lg md:text-3xl text-white">We create exceptional fashion experiences for our customers by delivering premium quality, timeless designs, and personalized service.</p>
                     </div>
                 </div>
 
@@ -121,10 +121,10 @@ const Testimonial: React.FC<props> = ({
                 <div>
                     <div className="flex bg-[url('/backgrounds/grid.svg')] flex-col md:flex-row items-center justify-between w-full border-2 border-white my-10 p-10 rounded-3xl gap-5">
                         <div className="w-full md:w-1/2">
-                            <h2 className="text-3xl md:text-5xl text-white"><b>The words of our clients </b>(re)commend our services, always</h2>
+                            <h2 className="text-3xl md:text-5xl text-white"><b>What our customers say</b> about our luxury fashion</h2>
                         </div>
                         <div className="w-full md:w-1/2">
-                            <p className="text-lg md:text-3xl text-white">We’re a customer-centric organization, and the words of our clients reflect the excellence of our software development solutions and services.</p>
+                            <p className="text-lg md:text-3xl text-white">We're passionate about fashion excellence, and our customers' words reflect the quality and style of our luxury collections.</p>
                         </div>
                     </div>
                     <div className="flex mt-20 flex-wrap justify-between items-stretch gap-8">

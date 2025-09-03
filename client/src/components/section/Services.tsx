@@ -11,12 +11,12 @@ import Title from "../ui/Title";
 import ServiceCard from "../ui/cards/ServiceCard";
 
 const defaultServices = [
-  { id: "ecommerce", title: "Ecommerce Development", description: "Cyberpeak IT Solutions offers diverse e-commerce solutions and tailored support to enhance your digital operations by equipping services such as Magento, Bigcommerce, Shopify and Demandware.", icon: <FaShoppingCart />, image: "/images/ecommerce3.jpg", link: "/ecommerce" },
-  { id: "headless", title: "Headless PWA", description: "Our Headless PWA development services let organisations segregate their app's front and back ends for unmatched content and presentation control. This technique improves user experience and allows quick upgrades and scalability as your organisation expands.", icon: <FaBoxOpen />, image: "/images/headless.jpg", link: "/headless-pwa" },
-  { id: "erp", title: "ERP Integration", description: "Our ERP integration solutions are customised for each company. We integrate SAP, ERPNext, and Procore ERP systems to help your firm manage resources, measure metrics, and improve departmental decision-making.", icon: <FaExchangeAlt />, image: "/images/erp.jpg", link: "/erp-integration" },
-  { id: "data", title: "Data Analysis", description: "At CyberPeak IT Solutions, we help businesses unlock the full potential of their data, improving decision-making, boosting productivity, and supporting long-term success.", icon: <FaChartLine />, image: "/images/data-analysis.jpg", link: "/data-analysis" },
-  { id: "marketing", title: "Marketing", description: "CyberPeak IT Solutions provides comprehensive marketing services designed to help businesses enhance their online presence and achieve sustainable growth. Our marketing strategies are data-driven and tailored to meet the unique needs of your business.", icon: <FaBullhorn />, image: "/images/marketing2.jpg", link: "/marketing" },
-  { id: "mobile", title: "Mobile App", description: "Our team of experienced developers, designers, and strategists work together to deliver high-performance apps that enhance your digital presence and provide measurable results.", icon: <FaMobile />, image: "/images/mobile2.jpg", link: "/mobile-app" }
+  { id: "women", title: "Women's Collection", description: "Discover our exquisite range of women's luxury clothing, from elegant dresses to sophisticated business wear, crafted with premium materials and timeless designs.", icon: <FaShoppingCart />, image: "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg", link: "/women" },
+  { id: "men", title: "Men's Collection", description: "Explore our refined men's collection featuring tailored suits, premium casual wear, and accessories that embody modern sophistication and classic style.", icon: <FaBoxOpen />, image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg", link: "/men" },
+  { id: "accessories", title: "Luxury Accessories", description: "Complete your look with our curated selection of premium accessories including handbags, jewelry, watches, and scarves from renowned designers.", icon: <FaExchangeAlt />, image: "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg", link: "/accessories" },
+  { id: "seasonal", title: "Seasonal Collections", description: "Stay ahead of fashion trends with our seasonal collections, featuring the latest styles and must-have pieces for every season and occasion.", icon: <FaChartLine />, image: "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg", link: "/seasonal" },
+  { id: "designer", title: "Designer Brands", description: "Shop exclusive pieces from world-renowned designers and emerging talents, offering unique styles that make a statement and reflect your personal taste.", icon: <FaBullhorn />, image: "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg", link: "/designer" },
+  { id: "custom", title: "Custom Tailoring", description: "Experience the ultimate in personalized fashion with our bespoke tailoring services, creating one-of-a-kind pieces that fit perfectly and reflect your individual style.", icon: <FaMobile />, image: "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg", link: "/custom" }
 ];
 type Service = {
   id: string;
@@ -37,7 +37,7 @@ export default function Services({ gradientColors, title, servicesData,  }: prop
   const services = servicesData || defaultServices ;
   const defaultGradient = "from-[#BF4000] via-[#002440] to-white";
   const appliedGradient = gradientColors || defaultGradient;
-  const appliedTitle = title || "Our Services";
+  const appliedTitle = title || "Our Collections";
   const [activeIndex, setActiveIndex] = useState(0);
   const [sliderWidth, setSliderWidth] = useState(0);
   const [tabsWidth, setTabsWidth] = useState(0);

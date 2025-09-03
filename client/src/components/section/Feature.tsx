@@ -24,30 +24,30 @@ type FeaturesProps = {
 export default function Features({
     features = [
         {
-            icon: "\uD83D\uDE80",
-            title: "Fast & Scalable",
-            description: "Built for speed, ensuring seamless performance at any scale.",
+            icon: "👗",
+            title: "Premium Quality",
+            description: "Crafted from the finest materials with attention to every detail.",
         },
         {
-            icon: "\uD83D\uDEE1\uFE0F",
-            title: "Secure & Reliable",
-            description: "Industry-leading security to keep your data safe and protected.",
+            icon: "✨",
+            title: "Timeless Design",
+            description: "Classic styles that transcend trends and seasons.",
         },
         {
-            icon: "\uD83D\uDCA1",
-            title: "Innovative Solutions",
-            description: "Cutting-edge technology tailored to your business needs.",
+            icon: "🌿",
+            title: "Sustainable Fashion",
+            description: "Ethically sourced materials and responsible manufacturing.",
         },
         {
-            icon: "⚙️",
-            title: "Customizable",
-            description: "Flexible and adaptable to match your unique requirements.",
+            icon: "🚚",
+            title: "Fast Delivery",
+            description: "Quick and secure shipping to your doorstep worldwide.",
         },
     ],
     title = "Overview",
     textData = {
-        title: "<b>Trusted by businesses</b> to scale with confidence",
-        description: "Explore the features that make our platform an essential part of your growth journey.",
+        title: "<b>Trusted by fashion enthusiasts</b> worldwide for luxury and style",
+        description: "Discover what makes our collection the perfect choice for your wardrobe.",
     },
 }: FeaturesProps) {
     return (

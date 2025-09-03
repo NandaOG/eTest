@@ -128,7 +128,7 @@ const Form: React.FC<FormProps> = ({
                         }
                         label={
                             <Typography variant="body2" color={errors.smsConsent ? "error" : "inherit"}>
-                                I Consent to Receive SMS Notifications and Alerts from Humanoid AI. Message frequency varies. Message & data rates may apply. Text HELP to +1 (315) 872 2714 for assistance. You can reply STOP or OUT to unsubscribe at any time.
+                                I consent to receive SMS notifications about new collections, exclusive offers, and styling tips from Luxe Apparel. Message frequency varies. Message & data rates may apply. Text HELP for assistance. Reply STOP to unsubscribe.
                             </Typography>
                         }
                     />
@@ -151,7 +151,7 @@ const Form: React.FC<FormProps> = ({
                         }
                         label={
                             <Typography variant="body2" color={errors.marketingConsent ? "error" : "inherit"}>
-                                By checking this box I agree to receive occasional marketing and promotional messages from Humanoid AI at the phone number provided above. This agreement isn&apos;t set a condition of any purchase. Message & data rates may apply. Text HELP to +1 (315) 872 2714 for assistance. You can reply STOP or OUT to unsubscribe at any time.
+                                By checking this box I agree to receive occasional marketing and promotional messages from Luxe Apparel about new collections, exclusive sales, and fashion events. This agreement isn&apos;t a condition of any purchase. Message & data rates may apply. Reply STOP to unsubscribe.
                             </Typography>
                         }
                     />

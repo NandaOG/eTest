@@ -34,7 +34,7 @@ from-[#BF4000] via-[#002440] to-white In Use */}
       <div aria-hidden="true">
         <h2 className="text-5xl md:text-6xl font-bold">
           <Typewriter 
-            words={["Innovate.", "Execute.", "Lead."]}
+            words={["Luxury.", "Style.", "Elegance."]}
             loop={0} 
             cursor
             cursorStyle="|"
@@ -46,11 +46,11 @@ from-[#BF4000] via-[#002440] to-white In Use */}
       </div>
 
       <p className="mt-4 text-lg md:text-xl max-w-2xl">
-        Empowering businesses with cutting-edge technology and innovation.
+        Discover timeless elegance with our curated collection of premium fashion.
       </p>
 
       {/* Animated Button with ARIA Label */}
-      <Button text="Get Started" href="/contact" aria-label="Get started" />
+      <Button text="Shop Collection" href="/shop" aria-label="Shop our collection" />
        
     </section>
   );

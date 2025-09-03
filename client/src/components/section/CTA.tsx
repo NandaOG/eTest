@@ -19,10 +19,10 @@ const CTA = ({ gradientColors }: GradientProps) => {
                 <div className="container mx-auto mt-15">
                     <div className="flex bg-[url('/backgrounds/grid.svg')] flex-col md:flex-row items-center justify-between w-full border-2 border-white my-10 p-10 rounded-3xl gap-5">
                         <div className="w-full md:w-1/2">
-                            <h2 className="text-3xl md:text-5xl text-white"><b>Let’s Connect </b> and Create Something Amazing!</h2>
+                            <h2 className="text-3xl md:text-5xl text-white"><b>Let's Connect </b> and Create Your Perfect Style!</h2>
                         </div>
                         <div className="w-full md:w-1/2">
-                            <p className="text-lg md:text-3xl text-white">Have questions or ideas? Drop us a message, and we’ll be in touch soon.</p>
+                            <p className="text-lg md:text-3xl text-white">Need styling advice or have questions? Our fashion experts are here to help you find your perfect look.</p>
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row justify-between items-center gap-10 text-white rounded-3xl pt-10">
@@ -40,8 +40,8 @@ const CTA = ({ gradientColors }: GradientProps) => {
                                         <FaRegClock />
                                     </span>
                                     <div>
-                                        <p className="font-semibold">Working Hours</p>
-                                        <p>Monday To Friday: 10am - 7pm (IST)</p>
+                                        <p className="font-semibold">Store Hours</p>
+                                        <p>Monday To Saturday: 10am - 8pm</p>
                                     </div>
                                 </div>
                                 {/* Email */}
@@ -52,8 +52,8 @@ const CTA = ({ gradientColors }: GradientProps) => {
                                     <div>
                                         <p className="font-semibold">Email</p>
                                         <p>
-                                            <a href="mailto:sales@cyberpeakitsolutions.com" className="text-blue-400 hover:underline">
-                                                sales@cyberpeakitsolutions.com
+                                            <a href="mailto:hello@luxeapparel.com" className="text-blue-400 hover:underline">
+                                                hello@luxeapparel.com
                                             </a>
                                         </p>
                                     </div>
@@ -67,8 +67,8 @@ const CTA = ({ gradientColors }: GradientProps) => {
                                     <div>
                                         <p className="font-semibold">Address</p>
                                         <p>
-                                            EP-Y1, Bidhannagar, Arch Square X2 1404, <br />
-                                            Salt Lake Sector-5, Kolkata – 700091, India
+                                            123 Fashion Avenue, <br />
+                                            New York, NY 10001, USA
                                         </p>
                                     </div>
                                 </div>
@@ -81,8 +81,8 @@ const CTA = ({ gradientColors }: GradientProps) => {
                                     <div>
                                         <p className="font-semibold">Contact Phone</p>
                                         <p>
-                                            <a href="tel:+919147711721" className="text-blue-400 hover:underline">
-                                                +91 91477 11721
+                                            <a href="tel:+12125551234" className="text-blue-400 hover:underline">
+                                                +1 (212) 555-1234
                                             </a>
                                         </p>
                                     </div>
@@ -95,9 +95,7 @@ const CTA = ({ gradientColors }: GradientProps) => {
                                     <div>
                                         <p className="font-semibold">GST Number</p>
                                         <p className="text-blue-400">
-                                            {/* <a href="#" className="text-blue-400 "> */}
-                                                GSTIN 19AAMCC1271G1ZM
-                                            {/* </a> */}
+                                                Tax ID: 12-3456789
                                         </p>
                                     </div>
                                 </div>

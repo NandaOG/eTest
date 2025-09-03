@@ -1,17 +1,21 @@
 "use client";
 
 import { motion, useTransform, MotionValue } from "framer-motion";
-import { TechItem } from "../../../types/types";
+import Image from "next/image";
 
 interface AnimatedTechItemProps {
-    tech: TechItem;
+    item: {
+        id: string;
+        name: string;
+        image: string;
+    };
     progress:  MotionValue<number>; 
     dimensions: { width: number; height: number };
     position: number;
 }
 
 export const InfiniteShapePath = ({
-    tech,
+    item,
     progress,
     dimensions,
     position
@@ -30,7 +34,6 @@ export const InfiniteShapePath = ({
         return Math.sin((v + position) * Math.PI * 4) * (dimensions.height / 2.8)
     });
 
-    const IconComponent = tech.icon;
 
     return (
         <motion.div
@@ -45,11 +48,17 @@ export const InfiniteShapePath = ({
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 500, damping: 15 }}
         >
-            <div className="relative flex items-center justify-center w-14 h-14 md:w-20 md:h-20 rounded-lg bg-white/10 md:backdrop-blur-sm shadow-md transition-all duration-300">
-                <IconComponent className={`text-3xl md:text-4xl ${tech.color}`} />
+            <div className="relative flex items-center justify-center w-14 h-14 md:w-20 md:h-20 rounded-full bg-white/90 backdrop-blur-sm shadow-lg transition-all duration-300 overflow-hidden">
+                <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-cover rounded-full"
+                />
                 <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="px-3 py-1 rounded-full text-xs text-white md:text-sm shadow-lg">
-                        {tech.name}
+                    <div className="px-3 py-1 bg-black/80 rounded-full text-xs text-white md:text-sm shadow-lg">
+                        {item.name}
                     </div>
                 </div>
             </div>

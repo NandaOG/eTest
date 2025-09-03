@@ -1,80 +1,61 @@
-import { FiShoppingCart, FiLayers, FiTool, FiBarChart2, FiSmartphone } from 'react-icons/fi';
+import { FiShoppingCart, FiUser, FiHeart, FiGift } from 'react-icons/fi';
 
 export const menuItems = [
-  // { 
-  //   label: "Home", 
-  //   path: "/" 
-  // },
   { 
-    label: "Services", 
+    label: "Shop", 
     subMenus: [
       { 
-        label: "Ecommerce", 
+        label: "Women", 
         icon: <FiShoppingCart className="inline mr-2" />,
         children: [
-          { label: "Magento", path: "/services/ecommerce/magento" },
-          { label: "BigCommerce", path: "/services/ecommerce/bigcommerce" },
-          { label: "Shopify", path: "/services/ecommerce/shopify" },
-          { label: "Demandware", path: "/services/ecommerce/demandware" }
+          { label: "Dresses", path: "/women/dresses" },
+          { label: "Tops & Blouses", path: "/women/tops" },
+          { label: "Pants & Skirts", path: "/women/bottoms" },
+          { label: "Outerwear", path: "/women/outerwear" }
         ]
       },
       { 
-        label: "Headless PWA", 
-        icon: <FiLayers className="inline mr-2" />,
-        
-      },
-      { 
-        label: "ERP Integration", 
-        icon: <FiTool className="inline mr-2" />,
+        label: "Men", 
+        icon: <FiUser className="inline mr-2" />,
         children: [
-          { label: "Epicor Integration", path: "/services/erp-integration/epicor" },
-          { label: "DDI Integration", path: "/services/erp-integration/ddi" },
-          { label: "Netsuite Integration", path: "/services/erp-integration/netsuite" },
-          { label: "Lightspeed Integration", path: "/services/erp-integration/lightspeed" },
+          { label: "Suits", path: "/men/suits" },
+          { label: "Shirts", path: "/men/shirts" },
+          { label: "Pants", path: "/men/pants" },
+          { label: "Casual Wear", path: "/men/casual" }
         ]
       },
       { 
-        label: "Data Analysis", 
-        icon: <FiBarChart2 className="inline mr-2" />,
+        label: "Accessories", 
+        icon: <FiGift className="inline mr-2" />,
         children: [
-          { label: "Primary Market Research", path: "/services/data-analysis/primary" },
-          { label: "Secondary Market Research", path: "/services/data-analysis/secondary" },
-          { label: "Quantitative Market Research", path: "/services/data-analysis/quantitative" },
-          { label: "Quanlitative Market Research", path: "/services/data-analysis/qualitative" },
+          { label: "Handbags", path: "/accessories/handbags" },
+          { label: "Jewelry", path: "/accessories/jewelry" },
+          { label: "Shoes", path: "/accessories/shoes" },
+          { label: "Watches", path: "/accessories/watches" },
         ]
       },
       { 
-        label: "Marketing", 
-        // icon: <FiMegaphone className="inline mr-2" />,
+        label: "Collections", 
+        icon: <FiHeart className="inline mr-2" />,
         children: [
-          { label: "Digital Marketing", path: "/services/marketing/digital-marketing" },
-          { label: "SEO Optimization", path: "/services/marketing/seo" },
-          { label: "Analytics & Insights", path: "/services/marketing/analytics" }
-        ]
-      },
-      { 
-        label: "Mobile App", 
-        icon: <FiSmartphone className="inline mr-2" />,
-        children: [
-          { label: "iOS Applications", path: "/services/mobile-app/ios" },
-          { label: "Android Applications", path: "/services/mobile-app/android" },
-          { label: "Cross-Platform Applications", path: "/services/mobile-app/cross-platform" },
-          { label: "React Native Applications", path: "/services/mobile-app/react-native" },
-          { label: "Flutter Applications", path: "/services/mobile-app/flutter" },
+          { label: "Summer Collection", path: "/collections/summer" },
+          { label: "Winter Collection", path: "/collections/winter" },
+          { label: "Designer Collection", path: "/collections/designer" },
+          { label: "Limited Edition", path: "/collections/limited" },
         ]
       }
     ]
   },
   { 
-    label: "About", 
-    path: "/about" 
+    label: "About",
+    path: "/about"
   },
   { 
     label: "Contact", 
     path: "/contact" 
   },
   { 
-    label: "Portfolio", 
-    path: "/portfolio" 
+    label: "Lookbook", 
+    path: "/lookbook" 
   }
 ];

@@ -13,64 +13,64 @@ import {
   import { LuGlobe, LuBrain } from "react-icons/lu";
 
 export const metadata = {
-  title: "About Us | Cyberpeak IT Solutions",
+  title: "About Us | Luxe Apparel",
   description:
-    "At Cyberpeak IT Solutions, we provide personalised digital solutions that help organisations succeed in a competitive market with a team of IT, business strategy, and technical development professionals.",
+    "At Luxe Apparel, we curate the finest luxury fashion collections, bringing together timeless elegance and contemporary style for the discerning fashion enthusiast.",
 };
 
 export default function AboutUsPage() {
   const heroData = {
-    title: "About Cyberpeak IT Solutions",
+    title: "About Luxe Apparel",
     description:
-      "At Cyberpeak IT Solutions, we provide personalised digital solutions that help organisations succeed in a competitive market with a team of IT, business strategy, and technical development professionals.",
-    imageSrc: "/images/CyberPeak IT Solutions Pvt. Ltd..jpeg",
-    imageAlt: "Cyberpeak team collaborating",
-    buttonText: "Explore Our Services",
-    buttonLink: "/services",
+      "At Luxe Apparel, we curate the finest luxury fashion collections, bringing together timeless elegance and contemporary style for the discerning fashion enthusiast.",
+    imageSrc: "https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg",
+    imageAlt: "Luxury fashion store",
+    buttonText: "Shop Collection",
+    buttonLink: "/shop",
   };
   const introductionData = {
     title: "Our Story",
-    title2: "<b>CyberPeak IT Solutions:</b>  A Journey of Expertise, Vision, and Innovation",
+    title2: "<b>Luxe Apparel:</b> A Journey of Style, Quality, and Timeless Elegance",
     subtitle:
-      "CyberPeak IT Solutions was founded by three passionate professionals — Mukund Bajaj, Vedant Sarda, and Mehul Shekha — with a vision to bridge technology and strategy.",
-    buttonText: "Contact Our Team",
+      "Luxe Apparel was founded with a vision to bring the world's finest fashion to discerning customers who appreciate quality, craftsmanship, and timeless style.",
+    buttonText: "Explore Collections",
     buttonLink: "/contact",
-    highlightTitle: "We turn complex data and digital needs into smart, scalable solutions.",
+    highlightTitle: "We curate exceptional fashion pieces that define luxury and elegance.",
     bullets: [
-        "Serving clients in eCommerce, enterprise, and startup ecosystems.",
-        "Specialized in data-driven development and analytics solutions.",
-        "Experts in integrating ERP, CRM, and business intelligence systems.",
-        "Cross-functional team across development, analytics, and strategy.",
-        "Delivering web and mobile apps that scale with your business.",
-        "End-to-end delivery: from ideation to deployment and optimization.",
-        "Deep experience with cloud platforms, APIs, and secure architecture.",
+        "Curating luxury fashion from renowned designers worldwide.",
+        "Specialized in premium materials and exceptional craftsmanship.",
+        "Expert styling consultations and personalized shopping experiences.",
+        "Sustainable fashion practices and ethical sourcing.",
+        "Delivering timeless pieces that transcend seasonal trends.",
+        "End-to-end luxury experience: from selection to delivery.",
+        "Deep relationships with exclusive fashion houses and emerging designers.",
         
       ],
       
     features: [
       {
         id: 1,
-        icon: <FaUsers />,
-        title: "Client-First Approach",
-        desc: "Every solution is tailored to your unique challenges and goals.",
+        icon: <FaLightbulb />,
+        title: "Curated Excellence",
+        desc: "Every piece is carefully selected for its quality, design, and timeless appeal.",
       },
       {
         id: 2,
-        icon: <LuBrain />,
-        title: "Analytics-Driven",
-        desc: "We use data to guide every design, development, and marketing decision.",
+        icon: <FaUsers />,
+        title: "Personal Styling",
+        desc: "Our expert stylists help you create the perfect wardrobe for any occasion.",
       },
       {
         id: 3,
         icon: <FaChartLine />,
-        title: "Scalable Solutions",
-        desc: "Our systems are built to evolve with your growing business.",
+        title: "Premium Quality",
+        desc: "We partner with the finest fashion houses to bring you exceptional quality.",
       },
       {
         id: 4,
         icon: <FaHandshake />,
-        title: "Built on Partnership",
-        desc: "We grow with our clients — through collaboration, not just contracts.",
+        title: "Sustainable Fashion",
+        desc: "We're committed to ethical practices and sustainable fashion choices.",
       },
     ],
   };
@@ -79,50 +79,50 @@ export default function AboutUsPage() {
   const featuresData = {
     title: "Our Values",
     textData: {
-      title: "<b>The Principles That Guide Our Work</b>",
+      title: "<b>The Principles That Guide Our Fashion</b>",
       description:
-        "At Cyberpeak, values aren’t just words — they’re our operating system. We lead with empathy, deliver with precision, and always aim for meaningful impact.",
+        "At Luxe Apparel, values aren't just words — they're woven into every thread. We lead with style, deliver with quality, and always aim for timeless elegance.",
     },
     features: [
         {
           icon: <FaLightbulb />,
-          title: "Innovation",
-          description: "We challenge the status quo to find smarter, more creative solutions.",
+          title: "Innovation in Design",
+          description: "We seek out the most creative and forward-thinking designers in fashion.",
         },
         {
           icon: <LuGlobe />,
-          title: "Global Perspective",
-          description: "We bring worldwide insights with local relevance.",
+          title: "Global Fashion",
+          description: "We bring worldwide fashion trends with local styling expertise.",
         },
         {
           icon: <FaUsers />,
-          title: "Collaboration",
-          description: "Our best work happens when we co-create with clients and partners.",
+          title: "Customer Partnership",
+          description: "Our best styling happens when we collaborate with our customers' vision.",
         },
         {
           icon: <FaChartLine />,
           title: "Excellence",
-          description: "Every project is a chance to raise the bar for quality and impact.",
+          description: "Every piece is a chance to raise the bar for luxury and style.",
         },
         {
-          icon: <FaDatabase />,
-          title: "Data-First Mindset",
-          description: "Every decision we make is grounded in analytics and meaningful metrics.",
+          icon: <FaLightbulb />,
+          title: "Quality-First Mindset",
+          description: "Every decision we make is grounded in quality and craftsmanship.",
         },
         {
-          icon: <FaLaptopCode />,
-          title: "Tech Expertise",
-          description: "From ERP integrations to scalable mobile/web apps, we build with precision.",
+          icon: <FaUsers />,
+          title: "Fashion Expertise",
+          description: "From haute couture to ready-to-wear, we curate with precision and style.",
         },
         {
           icon: <FaShieldAlt />,
-          title: "Security & Integrity",
-          description: "We prioritize secure systems and ethical data practices in every build.",
+          title: "Authenticity & Integrity",
+          description: "We guarantee authentic pieces and ethical sourcing in every collection.",
         },
         {
           icon: <FaRocket />,
-          title: "Agility & Growth",
-          description: "We adapt quickly, scale fast, and help our clients grow with confidence.",
+          title: "Style & Elegance",
+          description: "We adapt to trends while maintaining timeless elegance and sophistication.",
         },
       ]
       

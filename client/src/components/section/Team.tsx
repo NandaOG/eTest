@@ -8,40 +8,33 @@ import TextComponent from "../ui/TextComponent";
 import TeamCard from "../ui/cards/TeamCard";
 const teamMembers = [
   {
-    name: "Mukund Bajaj",
-    role: "Founder & CEO",
-    image: "/images/mukund.jpg",
-    bio: "I blend business strategy with IT solutions, using my finance expertise to drive growth and efficiency.",
-    linkedin: "https://linkedin.com/in/mukund",
+    name: "Isabella Rodriguez",
+    role: "Creative Director",
+    image: "/images/client/avatar-f1.png",
+    bio: "I curate our collections with an eye for timeless elegance and contemporary sophistication.",
+    linkedin: "https://linkedin.com/in/isabella",
   },
   {
-    name: "Vedant Sarda",
-    role: "Co-founder",
+    name: "Alexander Chen",
+    role: "Head of Design",
     image: "/images/client/avatar-m1.png",
-    bio: "Vedant crafts scalable solutions with clean code and powerful backend architecture.",
-    linkedin: "https://linkedin.com/in/vedant",
+    bio: "Alexander brings innovative design concepts that blend classic tailoring with modern aesthetics.",
+    linkedin: "https://linkedin.com/in/alexander",
   },
   {
-    name: "Mehul Shekha",
-    role: "Technical Head",
-    image:"/images/client/avatar-m1.png",
-    bio: "I create impactful solutions that align technical expertise with business goals for scalable success.",
-    linkedin: "https://linkedin.com/in/mehul",
+    name: "Sophia Laurent",
+    role: "Head Stylist",
+    image:"/images/client/avatar-f2.png",
+    bio: "I help our customers discover their personal style through our curated luxury collections.",
+    linkedin: "https://linkedin.com/in/sophia",
   },
-//   {
-//     name: "Rajendra Kumar Shaw",
-//     role: "Full Stack Developer",
-//     image: "/images/team/mehul.jpg",
-//     bio: "I crafts scalable solutions with clean code and powerful backend architecture.",
-//     linkedin: "https://linkedin.com/in/mehul",
-//   },
 ];
 
 export default function Team() {
   return (
     <section id="services" className={`w-full py-20 px-10 md:px-20 bg-gradient-to-br from-[#002440] via-[#002440]  to-white text-white`}>
       <Title title="Our Team" />
-      <TextComponent title="<b>Meet the minds behind CyberPeak</b> — a synergy of tech, strategy, and curiosity" description="We’re a collective of thinkers, builders, and innovators. With deep expertise in data science, software engineering, UI/UX design, business strategy, marketing, and eCommerce."/>
+      <TextComponent title="<b>Meet the minds behind Luxe Apparel</b> — a synergy of style, creativity, and passion" description="We're a collective of fashion experts, stylists, and curators. With deep expertise in luxury fashion, personal styling, trend forecasting, and customer experience."/>
       <div className="container mx-auto mt-17 text-center">
         {/* <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Team</h2> */}
         <div className="relative pt-10 flex flex-col md:flex-row justify-between gap-20">

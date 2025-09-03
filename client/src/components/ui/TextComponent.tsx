@@ -7,9 +7,9 @@ type ClientImpactSectionProps = {
 };
 
 const defaultProps: Required<ClientImpactSectionProps> = {
-  title: "<b>Admired clients</b> who’re enjoying the (re)action of our full-fledged services",
+  title: "<b>Fashion enthusiasts</b> who love our curated luxury collections",
   description:
-    "We create a positive impact for our clients by resolving issues and optimizing performance to enhance their small and large-scale software development initiatives.",
+    "We create exceptional fashion experiences for our customers by delivering premium quality, timeless designs, and personalized styling services.",
 };
 
 const TextComponent: React.FC<ClientImpactSectionProps> = ({

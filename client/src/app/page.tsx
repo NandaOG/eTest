@@ -11,9 +11,9 @@ import type { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title: "CyberPeak IT Solutions",
+  title: "Luxe Apparel - Premium Fashion Collection",
   description:
-    "At Cyberpeak IT Solutions, we provide personalised digital solutions that help organisations succeed in a competitive market with a team of IT, business strategy, and technical development professionals.",
+    "Discover our exclusive collection of luxury clothing. Premium quality, timeless style, and exceptional craftsmanship for the modern fashion enthusiast.",
 };
 
 export default function Home() {
