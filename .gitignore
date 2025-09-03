@@ -3,3 +3,4 @@
 Vagrantfile
 uploads/
 ngrok*
+.env
