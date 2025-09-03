@@ -2,15 +2,7 @@
 
 import { useMotionValue, animate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import {
-    FaReact, FaNodeJs, FaDocker, FaAws, FaPython
-} from "react-icons/fa";
 
-import {
-    SiTypescript, SiKubernetes, SiGraphql, SiFlutter, SiFirebase,
-    SiTailwindcss, SiNextdotjs, SiWordpress, SiBigcommerce, SiShopify,
-    SiWoocommerce, SiMagento, SiPhp, SiLaravel, SiMysql, SiLinux
-} from "react-icons/si";
 import { InfiniteShapePath } from "../ui/Animated/InfiniteShapePath";
 
 import Title from "../ui/Title";
@@ -34,7 +26,7 @@ export default function TechStack() {
     const [dimensions, setDimensions] = useState({ width: 1000, height: 350 });
     const [isClient, setIsClient] = useState(false);
     const progress = useMotionValue(0);
-    const count = techStack.length * 1.5;
+    const count = TechStack.length * 1.5;
 
     useEffect(() => {
         setIsClient(true);
