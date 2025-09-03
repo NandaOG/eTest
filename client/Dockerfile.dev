@@ -1,0 +1,28 @@
+# Development Dockerfile for Next.js with Hot Reloading
+FROM node:18-alpine
+
+# Install dependencies
+RUN apk add --no-cache libc6-compat dos2unix
+
+# Set working directory
+WORKDIR /app
+
+# Copy only package files to install dependencies first
+COPY package.json package-lock.json ./
+
+# Install Node modules (remove duplicate)
+RUN npm config set cache /tmp/.npm --global
+RUN npm install --force
+
+# Disable Next.js telemetry
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Copy source code and convert line endings
+COPY . .
+RUN find . -type f -name "*.js" -o -name "*.ts" -o -name "*.tsx" | xargs -r dos2unix
+
+# Expose the port
+EXPOSE 3000
+
+# Start the dev server
+CMD ["npm", "run", "dev-docker"]

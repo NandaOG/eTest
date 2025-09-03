@@ -1,0 +1,45 @@
+# Builder Stage
+FROM node:18-alpine AS builder
+
+# Install system deps + dos2unix for Windows line endings
+RUN apk add --no-cache \
+    libc6-compat \
+    libpng \
+    libjpeg-turbo \
+    vips-dev \
+    python3 \
+    make \
+    g++ \
+    dos2unix
+
+WORKDIR /app
+
+# Copy package files first (better caching)
+COPY package.json package-lock.json ./
+
+# Convert CRLF → LF for all files
+COPY . .
+RUN find . -type f -exec dos2unix {} \;
+
+# Install dependencies (run as non-root)
+RUN npm ci --no-optional --legacy-peer-deps --unsafe-perm
+
+# Force SWC binary for Alpine (musl)
+RUN npm install --no-save @next/swc-linux-x64-musl
+
+# Build with increased memory
+ENV NODE_OPTIONS="--max-old-space-size=6144"
+RUN npm run build
+
+# Runner Stage
+FROM node:18-alpine
+WORKDIR /app
+
+# Copy built assets with correct permissions
+COPY --from=builder --chown=node:node /app/.next ./.next
+COPY --from=builder --chown=node:node /app/public ./public
+COPY --from=builder --chown=node:node /app/node_modules ./node_modules
+COPY --from=builder --chown=node:node /app/package.json ./package.json
+
+EXPOSE 3000
+CMD ["npm", "start"]
