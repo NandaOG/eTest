@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { FaTrash, FaPlus, FaMinus, FaShoppingBag } from "react-icons/fa";
+import { Minus, Plus, Trash2, ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import { useCart } from "@/hooks/useCart";
 import Title from "@/components/ui/Title";
 import Button from "@/components/ui/Button";
 
@@ -25,41 +27,42 @@ const initialCartItems = [
     size: "One Size",
     color: "Brown",
   },
-];
-
-export default function Cart() {
-  const [cartItems, setCartItems] = useState(initialCartItems);
-
-  const updateQuantity = (id: number, newQuantity: number) => {
-    if (newQuantity === 0) {
-      removeItem(id);
-      return;
-    }
-    setCartItems(prev => 
-      prev.map(item => 
-        item.id === id ? { ...item, quantity: newQuantity } : item
-      )
-    );
-  };
-
-  const removeItem = (id: number) => {
-    setCartItems(prev => prev.filter(item => item.id !== id));
-  };
-
-  const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const { items, updateQuantity, removeFromCart, getTotalPrice, clearCart } = useCart();
+  const subtotal = getTotalPrice();
   const shipping = 25;
   const tax = subtotal * 0.08;
   const total = subtotal + shipping + tax;
 
+  if (items.length === 0) {
+    return (
+      <div className="min-h-screen bg-white dark:bg-black pt-20">
+        <div className="container mx-auto px-4 py-16">
+          <div className="text-center">
+            <h1 className="text-3xl font-bold mb-4">Your Cart is Empty</h1>
+            <p className="text-gray-600 dark:text-gray-300 mb-8">
+              Discover our luxury collections and add some items to your cart.
+            </p>
+            <Link href="/shop">
+              <Button className="bg-red-600 hover:bg-red-700 text-white">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Continue Shopping
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen pt-20 bg-gradient-to-br from-white via-gray-50 to-white">
+    <div className="min-h-screen bg-white dark:bg-black pt-20">
       {/* Header */}
       <section className="py-20 px-10 md:px-20 bg-gradient-to-br from-[#BF4000] via-[#002440] to-white text-white">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Shopping Cart</h1>
           <p className="text-lg md:text-xl">
             Review your selected items before checkout
-          </p>
+          <span className="text-gray-600 dark:text-gray-300">{items.length} items</span>
         </div>
       </section>
 
@@ -75,7 +78,7 @@ export default function Cart() {
           <div className="max-w-6xl mx-auto">
             <Title title="Your Items" />
             
-            <div className="flex flex-col lg:flex-row gap-10 mt-10">
+            {items.map((item) => (
               {/* Cart Items */}
               <div className="lg:w-2/3">
                 <div className="space-y-6">
@@ -89,15 +92,17 @@ export default function Cart() {
                           className="object-cover rounded-lg"
                         />
                       </div>
+                        onClick={() => removeFromCart(item.id)}
                       
                       <div className="flex-1">
                         <h3 className="text-lg font-semibold text-[#002440]">{item.name}</h3>
                         <p className="text-gray-600">Size: {item.size} | Color: {item.color}</p>
                         <p className="text-xl font-bold text-[#BF4000] mt-2">${item.price}</p>
-                      </div>
+                    <p className="text-gray-600 dark:text-gray-300 mb-3">Size: {item.size || 'One Size'}</p>
                       
                       <div className="flex flex-col items-end gap-4">
                         <button
+                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
                           onClick={() => removeItem(item.id)}
                           className="text-red-500 hover:text-red-700 transition-colors"
                         >
@@ -105,6 +110,7 @@ export default function Cart() {
                         </button>
                         
                         <div className="flex items-center gap-2 border border-gray-300 rounded-lg">
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
                             className="p-2 hover:bg-gray-100 transition-colors"
@@ -151,14 +157,27 @@ export default function Cart() {
                   </div>
                   
                   <Button text="Proceed to Checkout" />
-                  
-                  <div className="mt-4 text-center">
-                    <a href="/shop" className="text-[#BF4000] hover:underline">
                       Continue Shopping
                     </a>
                   </div>
                 </div>
               </div>
+            </div>
+            
+            <div className="flex justify-between items-center pt-6">
+              <Link href="/shop">
+                <Button variant="outline" className="border-red-600 text-red-600 hover:bg-red-50 dark:hover:bg-red-950">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Continue Shopping
+                </Button>
+              </Link>
+              <Button
+                onClick={clearCart}
+                variant="outline"
+                className="text-gray-600 hover:text-red-600 hover:border-red-600"
+              >
+                Clear Cart
+              </Button>
             </div>
           </div>
         )}

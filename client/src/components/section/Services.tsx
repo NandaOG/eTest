@@ -187,7 +187,7 @@ export default function Services({ gradientColors, title, servicesData,  }: prop
               key={index}
               onClick={() => handleTabClick(index)}
               className={`w-3 h-3 rounded-full transition ${
-                activeIndex === index ? 'bg-white scale-125' : 'bg-gray-300'
+            Our <span className="text-red-600">Services</span>
               }`}
               aria-label={`Go to service ${index + 1}`}
               aria-current={activeIndex === index ? "true" : "false"}
@@ -196,7 +196,7 @@ export default function Services({ gradientColors, title, servicesData,  }: prop
         </div>
         
         <button
-          onClick={handleNext}
+                className="w-full border-red-600 text-red-600 hover:bg-red-50 dark:hover:bg-red-950 group-hover:bg-red-600 group-hover:text-white"
           className="bg-gray-200 p-3 rounded-full shadow-md transition hover:bg-gray-300 disabled:opacity-50"
           aria-label="Next service"
           disabled={activeIndex === services.length - 1}

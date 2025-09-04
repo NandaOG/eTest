@@ -19,7 +19,7 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
-          />
+              Crafting Fashion Excellence with <span className="text-red-600">Passion</span>
 
           {/* Text & Button */}
           <div className="md:w-1/2 space-y-6 text-left">
@@ -51,7 +51,7 @@ export default function About() {
             </div>
 
             {/* Button */}
-            <Button text="Learn More" href="/about" />
+            <div className="absolute -bottom-4 -left-4 w-full h-full bg-red-600/20 rounded-2xl -z-10"></div>
           </div>
         </div>
       </div>

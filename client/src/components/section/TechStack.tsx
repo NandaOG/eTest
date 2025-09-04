@@ -43,7 +43,7 @@ export default function TechStack() {
             updateDimensions();
             window.addEventListener("resize", updateDimensions);
             return () => window.removeEventListener("resize", updateDimensions);
-        }
+        <InfiniteMovingCards items={fashionItems} direction="right" speed="slow" pauseOnHover={false} />
     }, []);
 
     useEffect(() => {

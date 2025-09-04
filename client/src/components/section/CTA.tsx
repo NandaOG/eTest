@@ -103,7 +103,7 @@ const CTA = ({ gradientColors }: GradientProps) => {
 
 
                             {/* Social Media Links */}
-                            <div className="mt-6 flex gap-4">
+    <section className="py-20 bg-gradient-to-r from-red-600 to-black">
                                 <a href="https://www.facebook.com/profile.php?id=61575556581825" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-500 transition duration-300 text-2xl border-1 border-white p-2 rounded-full">
                                     <FaFacebookF />
                                 </a>
