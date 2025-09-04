@@ -1,8 +1,8 @@
-@@ .. @@
- "use client";
- 
- import { cn } from "@/lib/utils";
- import React, { useEffect, useState } from "react";
+"use client";
+
+import { cn } from "@/lib/utils";
+import React, { useEffect, useState, useCallback } from "react";
+import Image from "next/image";
  
  export const InfiniteMovingCards = ({
    items,
@@ -23,30 +23,9 @@
    const containerRef = React.useRef<HTMLDivElement>(null);
    const scrollerRef = React.useRef<HTMLUListElement>(null);
  
-   useEffect(() => {
-     addAnimation();
-   }, []);
- 
    const [start, setStart] = useState(false);
- 
-   function addAnimation() {
-     if (containerRef.current && scrollerRef.current) {
-       const scrollerContent = Array.from(scrollerRef.current.children);
- 
-       scrollerContent.forEach((item) => {
-         const duplicatedItem = item.cloneNode(true);
-         if (scrollerRef.current) {
-           scrollerRef.current.appendChild(duplicatedItem);
-         }
-       });
- 
-       getDirection();
-       getSpeed();
-       setStart(true);
-     }
-   }
- 
-   const getDirection = () => {
+
+   const getDirection = useCallback(() => {
      if (containerRef.current) {
        if (direction === "left") {
          containerRef.current.style.setProperty(
@@ -60,9 +39,9 @@
          );
        }
      }
-   };
- 
-   const getSpeed = () => {
+   }, [direction]);
+
+   const getSpeed = useCallback(() => {
      if (containerRef.current) {
        if (speed === "fast") {
          containerRef.current.style.setProperty("--animation-duration", "20s");
@@ -72,9 +51,28 @@
          containerRef.current.style.setProperty("--animation-duration", "80s");
        }
      }
-   };
- 
-   return (
+   }, [speed]);
+
+   const addAnimation = useCallback(() => {
+     if (containerRef.current && scrollerRef.current) {
+       const scrollerContent = Array.from(scrollerRef.current.children);
+
+       scrollerContent.forEach((item) => {
+         const duplicatedItem = item.cloneNode(true);
+         if (scrollerRef.current) {
+           scrollerRef.current.appendChild(duplicatedItem);
+         }
+       });
+
+       getDirection();
+       getSpeed();
+       setStart(true);
+     }
+   }, [getDirection, getSpeed]);
+
+   useEffect(() => {
+     addAnimation();
+   }, [addAnimation]);   return (
      <div
        ref={containerRef}
        className={cn(
@@ -87,17 +85,15 @@
          className={cn(
            "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
            start && "animate-scroll",
--          pauseOnHover && "hover:[animation-play-state:paused]"
-+          pauseOnHover && "hover:[animation-play-state:paused]",
-+          !pauseOnHover && "[animation-play-state:running]"
+          pauseOnHover && "hover:[animation-play-state:paused]",
+          !pauseOnHover && "[animation-play-state:running]"
          )}
        >
-         {items.map((item, idx) => (
+         {items.map((item) => (
            <li
              className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 p-6 md:p-8"
              style={{
--              background: "linear-gradient(180deg, var(--slate-800), var(--slate-900))",
-+              background: "linear-gradient(180deg, #1f2937, #111827)",
+              background: "linear-gradient(180deg, #1f2937, #111827)",
              }}
              key={item.name}
            >
@@ -108,9 +104,11 @@
                ></div>
                <div className="relative z-20 flex flex-col items-center">
                  <div className="mb-4 w-full h-48 rounded-lg overflow-hidden">
-                   <img
+                   <Image
                      src={item.image}
                      alt={item.name}
+                     width={300}
+                     height={192}
                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                    />
                  </div>

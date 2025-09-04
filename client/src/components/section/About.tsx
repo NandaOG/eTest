@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Title from "../ui/Title";
 import Button from "../ui/Button";
+
 export default function About() {
   return (
     <section className="w-full py-20 px-10 md:px-20 bg-gradient-to-br from-white via-[#002440] to-[#BF4000] text-white">
@@ -19,13 +20,20 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
-              Crafting Fashion Excellence with <span className="text-red-600">Passion</span>
+          />
 
           {/* Text & Button */}
           <div className="md:w-1/2 space-y-6 text-left">
+            <h3 className="text-2xl font-bold">
+              Crafting Fashion Excellence with{" "}
+              <span className="text-red-600">Passion</span>
+            </h3>
+
             <p className="text-lg leading-relaxed">
-              Luxe Apparel is dedicated to curating the finest collection of luxury clothing that embodies sophistication and timeless style. 
-              We prioritize quality craftsmanship and exceptional design to meet the discerning tastes of fashion enthusiasts.
+              Luxe Apparel is dedicated to curating the finest collection of
+              luxury clothing that embodies sophistication and timeless style.
+              We prioritize quality craftsmanship and exceptional design to meet
+              the discerning tastes of fashion enthusiasts.
             </p>
 
             {/* Bullet Points */}
@@ -51,7 +59,7 @@ export default function About() {
             </div>
 
             {/* Button */}
-            <div className="absolute -bottom-4 -left-4 w-full h-full bg-red-600/20 rounded-2xl -z-10"></div>
+            <Button className="mt-6">Explore Collection</Button>
           </div>
         </div>
       </div>

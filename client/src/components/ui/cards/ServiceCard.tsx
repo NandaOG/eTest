@@ -13,31 +13,42 @@ interface Service {
 export default function ServiceCard({ service }: { service: Service }) {
   return (
     <motion.div
-      className="cursor-grab flex flex-col md:flex-row items-center gap-8 bg-transparent w-full min-w-full transition-transform"
+      className="cursor-grab flex flex-col md:flex-row items-center gap-8 bg-white/10 backdrop-blur-sm rounded-2xl p-6 w-full min-w-full transition-transform"
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
-      // whileTap={{ cursor: "grabbing" }} // 👈 This adds inline style cursor on tap
     >
-      <div className="w-full md:w-1/2  overflow-hidden aspect-w-3 aspect-h-2">
+      <div className="w-full md:w-1/2 overflow-hidden rounded-xl aspect-w-3 aspect-h-2">
         <Image
             src={service.image}
             alt={service.title}
             width={600}
             height={400}
-            className="rounded-tl-4xl rounded-br-4xl object-cover w-full h-full"
+            className="rounded-xl object-cover w-full h-full hover:scale-105 transition-transform duration-300"
             loading="lazy"
         />
       </div>
 
-      <div className="md:w-1/2 space-y-4 text-white-900 text-center md:text-left">
-        <h3 className="text-2xl font-bold">{service.title}</h3>
-        <p className="text-white-700 text-left ">{service.description}</p>
-        {service.link ? (
-          <Button text="View More" href={"/services/"+service.link} />
-        ) : (
-          <Button text="Let's Talk" href={"/contact"}/>
-        )}
+      <div className="md:w-1/2 space-y-6 text-white text-center md:text-left">
+        <h3 className="text-3xl md:text-4xl font-bold">{service.title}</h3>
+        <p className="text-lg leading-relaxed opacity-90">{service.description}</p>
+        <div className="pt-4">
+          {service.link ? (
+            <Button 
+              text="Explore Collection" 
+              href={service.link} 
+              variant="primary"
+              className="bg-red-600 text-white hover:bg-red-700 shadow-lg"
+            />
+          ) : (
+            <Button 
+              text="Get Started" 
+              href="/contact"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-gray-900"
+            />
+          )}
+        </div>
       </div>
     </motion.div>
   );

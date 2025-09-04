@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Button from "@/components/ui/Button";
 import { ShoppingCart, Heart, Star, Minus, Plus } from "lucide-react";
 import { useCart } from "@/hooks/useCart";
 import { useParams } from "next/navigation";
-
 const ProductPage = () => {
   const params = useParams();
   const { addToCart } = useCart();
@@ -98,11 +98,11 @@ const ProductPage = () => {
 
   if (!product) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" suppressHydrationWarning>
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Product Not Found</h1>
-          <Button asChild>
-            <Link href="/shop">Back to Shop</Link>
+          <Button href="/shop">
+            Back to Shop
           </Button>
         </div>
       </div>
@@ -117,6 +117,7 @@ const ProductPage = () => {
       image: product.image,
       quantity: quantity,
       size: selectedSize,
+      color: undefined
     });
   };
 
@@ -129,9 +130,11 @@ const ProductPage = () => {
           {/* Product Image */}
           <div className="space-y-4">
             <div className="relative overflow-hidden rounded-2xl">
-              <img
+              <Image
                 src={product.image}
                 alt={product.title}
+                width={600}
+                height={600}
                 className="w-full h-[600px] object-cover"
               />
               {discount > 0 && (

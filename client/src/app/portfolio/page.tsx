@@ -23,6 +23,8 @@ export default function ContactUs() {
     const projectsData =  [
         {
           id: "choueri",
+          price: 0,
+          originalPrice: 0,
           title: "The Choueri",
           description: "Choueri Real Estate will never settle for anything less than offering our clients the best in quality projects.",
           industry: "Real Estate",
@@ -34,6 +36,8 @@ export default function ContactUs() {
         },
         {
           id: "theumashow",
+          price: 0,
+          originalPrice: 0,
           title: "The Uma Show",
           description: "Practical tips, strategies and insights to help you in your quest for increasing vitality and quality of life.",
           industry: "Ecommerce",
@@ -44,6 +48,8 @@ export default function ContactUs() {
         },
         {
           id: "consopharma",
+          price: 0,
+          originalPrice: 0,
           title: "Consopharma",
           description: "We are thus considered as top Orthopedic Implants company.",
           industry: "Medical",
@@ -55,6 +61,8 @@ export default function ContactUs() {
         },
         {
             id: "himakshi",
+            price: 0,
+            originalPrice: 0,
             title: "Himakshi Road-Cons",
             description: "Manufacturer & Exporter of a Premium Quality Construction Equipment.",
             industry: "Manufacturing",
@@ -66,6 +74,8 @@ export default function ContactUs() {
           },
           {
             id: "rtexports",
+            price: 0,
+            originalPrice: 0,
             title: "R.T.Exports",
             description: "R.T.Export was established in the year 1992 and for over two decades.",
             industry: "Textile",
@@ -77,6 +87,8 @@ export default function ContactUs() {
           },
           {
             id: "hotminutehair",
+            price: 0,
+            originalPrice: 0,
             title: "Hotminute Hair",
             description: "Salon-worthy results In a hot minute! Innovative haircare that turns head.",
             industry: "Cosmetics",
@@ -88,6 +100,8 @@ export default function ContactUs() {
           },
           {
             id: "polyclinic",
+            price: 0,
+            originalPrice: 0,
             title: "The Practice Poly Clinic",
             description: "The Practice Poly Clinic is home of experienced Doctors in Dubai.",
             industry: "Medical",
@@ -99,6 +113,8 @@ export default function ContactUs() {
           },
           {
             id: "alsainternational",
+            price: 0,
+            originalPrice: 0,
             title: "Alsa International",
             description: "Alsa International is leading Customized Books Cover Printing Services provider in USA.",
             industry: "Creative",

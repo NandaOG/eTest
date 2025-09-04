@@ -3,14 +3,12 @@ import {
     FaLightbulb,
     FaUsers,
     FaChartLine,
-    FaDatabase,
-    FaLaptopCode,
     FaShieldAlt,
     FaHandshake,
     FaRocket
   } from "react-icons/fa";
   
-  import { LuGlobe, LuBrain } from "react-icons/lu";
+  import { LuGlobe } from "react-icons/lu";
 
 export const metadata = {
   title: "About Us | Luxe Apparel",

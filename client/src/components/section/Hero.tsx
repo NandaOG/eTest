@@ -1,84 +1,160 @@
 "use client";
 
-// import { motion } from "framer-motion";
-      className: "text-red-600 dark:text-red-400",
+import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
 import Button from "../ui/Button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const carouselImages = [
     {
-      src: "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Luxury Fashion Collection"
+      src: "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      alt: "Luxury Fashion Collection",
     },
     {
-      src: "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Designer Clothing"
+      src: "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      alt: "Designer Clothing",
     },
     {
-      src: "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Fashion Accessories"
+      src: "https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      alt: "Fashion Accessories",
     },
     {
-      src: "https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      alt: "Premium Apparel"
-    }
+      src: "https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2",
+      alt: "Premium Apparel",
+    },
   ];
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-black dark:to-gray-900 px-4">
+
+  // Auto-play carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [carouselImages.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
+  };
+
   return (
-    // <section className="h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#002440] to-[#BF4000] text-white px-6">
-    <section className="h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#BF4000] via-[#002440] to-white text-white p-10 md:p-20">
-  
-{/* 
-  1️⃣ Default Brand Colors to White (Smooth):
-from-[#002440] via-[#BF4000] to-white
-
-2️⃣ Dark Blue to Soft Burnt Orange to White (Gentle):
-from-[#002440] via-[#D67240] to-white
-
-3️⃣ Deep Navy to Faded Orange to White (Subtle):
-from-[#002440] via-[#E68A50] to-white
-
-4️⃣ Dark Blue to Warm Beige to White (Elegant):
-from-[#002440] via-[#F5C6A5] to-white
-                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white">
-5️⃣ Dark Blue to Golden Orange to White (Premium):
-from-[#002440] via-[#FF9F50] to-white
-
-6️⃣ Burnt Orange to Deep Navy to White (Reverse Flow):
-from-[#BF4000] via-[#002440] to-white In Use */}
-                <Button variant="outline" size="lg" className="border-red-600 text-red-600 hover:bg-red-50 dark:hover:bg-red-950">
+    <section className="relative h-screen overflow-hidden">
       {/* SEO Friendly Static H1 */}
-      <h1 className="sr-only">Empowering Businesses with Innovation and Technology</h1>
-      
-      {/* Typing Animation */}
-      <div aria-hidden="true">
-        <h2 className="text-5xl md:text-6xl font-bold">
-            <Carousel opts={{ loop: true }} className="w-full">
-              {carouselImages.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative z-10">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="rounded-2xl shadow-2xl w-full h-[600px] object-cover"
-                    />
-                  </div>
-                  <div className="absolute -top-4 -right-4 w-full h-full bg-red-600/20 rounded-2xl -z-10"></div>
-                </CarouselItem>
-              ))}
-            </Carousel>
-          />
-        </h2>
+      <h1 className="sr-only">
+        Luxe Apparel - Premium Fashion Collection and Timeless Elegance
+      </h1>
+
+      {/* Background Carousel */}
+      <div className="absolute inset-0">
+        {carouselImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+            {/* Dark overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/40"></div>
+          </div>
+        ))}
       </div>
 
-      <p className="mt-4 text-lg md:text-xl max-w-2xl">
-        Discover timeless elegance with our curated collection of premium fashion.
-      </p>
+      {/* Content Layer */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 md:px-10 lg:px-20">
+        {/* Typing Animation */}
+        <div aria-hidden="true" className="mb-6">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            <Typewriter
+              words={["Luxury Fashion", "Timeless Elegance", "Premium Apparel", "Designer Collection"]}
+              loop={true}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={2000}
+            />
+          </h2>
+        </div>
 
-      {/* Animated Button with ARIA Label */}
-      className: "text-red-600 dark:text-red-400",
-      <Button text="Shop Collection" href="/shop" aria-label="Shop our collection" />
+        <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mb-8 leading-relaxed">
+          Discover timeless elegance with our curated collection of premium fashion. 
+          Where style meets sophistication.
+        </p>
+
+        {/* Call to Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 mb-12">
+          <Button
+            text="Shop Collection"
+            href="/shop"
+            variant="primary"
+            size="lg"
+            className="bg-red-600 hover:bg-red-700 text-white px-8 py-4"
+          />
+          <Button
+            text="View Lookbook"
+            href="/lookbook"
+            variant="outline"
+            size="lg"
+            className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4"
+          />
+        </div>
+
+        {/* Carousel Controls */}
+        <div className="flex items-center gap-4">
+          <button
+            onClick={prevSlide}
+            className="p-3 rounded-full bg-white/20 hover:bg-white/30 transition-colors backdrop-blur-sm"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="flex gap-2">
+            {carouselImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index === currentSlide ? "bg-white" : "bg-white/50"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={nextSlide}
+            className="p-3 rounded-full bg-white/20 hover:bg-white/30 transition-colors backdrop-blur-sm"
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="animate-bounce">
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
+      </div>
     </section>
   );
-      className: "text-red-600 dark:text-red-400",
 }

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { FaShoppingBag, FaHeart, FaFilter, FaSort } from "react-icons/fa";
+import { FaHeart, FaFilter, FaSort } from "react-icons/fa";
 import Title from "@/components/ui/Title";
 import Button from "@/components/ui/Button";
 
@@ -108,14 +108,14 @@ export default function Shop() {
       </section>
 
       {/* Filters and Sort */}
-      <section className="py-10 px-10 md:px-20 bg-white border-b">
+      <section className="py-10 px-10 md:px-20 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-4">
-            <FaFilter className="text-[#002440]" />
+            <FaFilter className="text-gray-700 dark:text-gray-300" />
             <select 
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BF4000]"
+              className="px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
             >
               <option value="all">All Categories</option>
               <option value="women">Women</option>
@@ -125,11 +125,11 @@ export default function Shop() {
           </div>
           
           <div className="flex items-center gap-4">
-            <FaSort className="text-[#002440]" />
+            <FaSort className="text-gray-700 dark:text-gray-300" />
             <select 
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BF4000]"
+              className="px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
             >
               <option value="featured">Featured</option>
               <option value="price-low">Price: Low to High</option>
@@ -141,11 +141,11 @@ export default function Shop() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-20 px-10 md:px-20">
+      <section className="py-20 px-10 md:px-20 bg-gray-50 dark:bg-gray-900">
         <Title title="Shop Collection" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
           {sortedProducts.map((product) => (
-            <div key={product.id} className="group relative bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div key={product.id} className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               {/* Sale Badge */}
               {product.sale && (
                 <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">
@@ -156,7 +156,7 @@ export default function Shop() {
               {/* Favorite Button */}
               <button
                 onClick={() => toggleFavorite(product.id)}
-                className="absolute top-4 right-4 p-2 bg-white/80 rounded-full hover:bg-white transition-colors z-10"
+                className="absolute top-4 right-4 p-2 bg-white/90 dark:bg-gray-800/90 rounded-full hover:bg-white dark:hover:bg-gray-700 transition-colors z-10"
               >
                 <FaHeart className={`${favorites.includes(product.id) ? 'text-red-500' : 'text-gray-400'}`} />
               </button>
@@ -173,19 +173,25 @@ export default function Shop() {
 
               {/* Product Info */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#002440] mb-2">{product.name}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{product.name}</h3>
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="text-2xl font-bold text-[#BF4000]">${product.price}</span>
+                  <span className="text-2xl font-bold text-red-600">${product.price}</span>
                   {product.originalPrice && (
                     <span className="text-lg text-gray-500 line-through">${product.originalPrice}</span>
                   )}
                 </div>
                 
-                <div className="flex gap-2">
-                  <Button text="Add to Cart" />
-                  <button className="px-4 py-2 border border-[#002440] text-[#002440] rounded-full hover:bg-[#002440] hover:text-white transition-colors">
-                    Quick View
-                  </button>
+                <div className="flex gap-3">
+                  <Button 
+                    text="Add to Cart" 
+                    variant="primary"
+                    className="flex-1"
+                  />
+                  <Button
+                    text="Quick View"
+                    variant="outline"
+                    className="border-gray-300 text-gray-700 hover:border-red-600 hover:text-red-600"
+                  />
                 </div>
               </div>
             </div>

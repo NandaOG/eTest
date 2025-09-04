@@ -69,7 +69,7 @@ const PrivacyContent: React.FC<PrivacyContentProps> = ({ sectionsData }) => {
     });
 
     return () => observer.disconnect();
-  }, [sectionsData]);
+  }, [sectionsData, allIds]);
 
   return (
     <section

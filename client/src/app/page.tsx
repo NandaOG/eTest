@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" suppressHydrationWarning>
         {/* <h1 >Hello</h1> */}
 
         <Hero/>

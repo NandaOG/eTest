@@ -1,5 +1,6 @@
 "use client"
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaQuoteLeft } from 'react-icons/fa';
 import Title from "../ui/Title";
@@ -107,9 +108,11 @@ const Testimonial: React.FC<props> = ({
                                 viewport={{ once: true }}
                             >
 
-                                <img
+                                <Image
                                     src={client.logo}
                                     alt={client.name}
+                                    width={200}
+                                    height={100}
                                     className="max-h-full max-w-full object-contain"
                                 />
                             </motion.div>
@@ -124,7 +127,7 @@ const Testimonial: React.FC<props> = ({
                             <h2 className="text-3xl md:text-5xl text-white"><b>What our customers say</b> about our luxury fashion</h2>
                         </div>
                         <div className="w-full md:w-1/2">
-                            <p className="text-lg md:text-3xl text-white">We're passionate about fashion excellence, and our customers' words reflect the quality and style of our luxury collections.</p>
+                            <p className="text-lg md:text-3xl text-white">We&apos;re passionate about fashion excellence, and our customers&apos; words reflect the quality and style of our luxury collections.</p>
                         </div>
                     </div>
                     <div className="flex mt-20 flex-wrap justify-between items-stretch gap-8">
@@ -140,9 +143,11 @@ const Testimonial: React.FC<props> = ({
                             >
                                 <FaQuoteLeft className="text-4xl text-gray-300 mb-4 mx-auto" />
                                 <p className="text-white mb-4">{testimonial.quote}</p>
-                                <img
+                                <Image
                                     src={testimonial.photo}
                                     alt={testimonial.name}
+                                    width={64}
+                                    height={64}
                                     className="w-16 h-16 rounded-full object-cover mx-auto mb-2"
                                 />
                                 <h3 className="text-lg text-[#002440] font-semibold">{testimonial.name}</h3>
