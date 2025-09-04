@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FaHeart, FaFilter, FaSort } from "react-icons/fa";
 import Title from "@/components/ui/Title";
 import Button from "@/components/ui/Button";
+import { useCart } from "@/hooks/useCart";
 
 const products = [
   {
@@ -69,6 +70,18 @@ export default function Shop() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortBy, setSortBy] = useState("featured");
   const [favorites, setFavorites] = useState<number[]>([]);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (product: typeof products[0]) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: 1,
+      color: undefined
+    });
+  };
 
   const filteredProducts = products.filter(product => 
     selectedCategory === "all" || product.category === selectedCategory
@@ -186,6 +199,7 @@ export default function Shop() {
                     text="Add to Cart" 
                     variant="primary"
                     className="flex-1"
+                    onClick={() => handleAddToCart(product)}
                   />
                   <Button
                     text="Quick View"

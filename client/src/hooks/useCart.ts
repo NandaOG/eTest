@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
@@ -24,7 +24,7 @@ interface CartStore {
   getTotalPrice: () => number;
 }
 
-export const useCart = create<CartStore>()(
+const useCartStore = create<CartStore>()(
   persist(
     (set, get) => ({
       items: [],
@@ -78,3 +78,20 @@ export const useCart = create<CartStore>()(
     }
   )
 );
+
+// Custom hook to handle hydration safely
+export const useCart = () => {
+  const [isHydrated, setIsHydrated] = useState(false);
+  const store = useCartStore();
+
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
+  return {
+    ...store,
+    getTotalItems: () => isHydrated ? store.getTotalItems() : 0,
+    getTotalPrice: () => isHydrated ? store.getTotalPrice() : 0,
+    items: isHydrated ? store.items : [],
+  };
+};

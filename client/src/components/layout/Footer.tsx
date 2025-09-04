@@ -2,8 +2,14 @@
 
 import Link from 'next/link';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
 
 const Footer = () => {
+    const [currentYear, setCurrentYear] = useState<number | null>(null);
+
+    useEffect(() => {
+        setCurrentYear(new Date().getFullYear());
+    }, []);
     return (
         <footer className="bg-gray-900 text-white">
             <div className="bg-gradient-to-br from-red-600 via-gray-800 to-gray-900 p-8 md:p-16">
@@ -119,7 +125,7 @@ const Footer = () => {
 
                         {/* Center text */}
                         <div className="text-white/80 text-center">
-                            © {new Date().getFullYear()} Luxe Apparel. All rights reserved.
+                            © {currentYear || 2024} Luxe Apparel. All rights reserved.
                         </div>
 
                         {/* Right side */}

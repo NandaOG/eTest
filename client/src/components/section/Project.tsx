@@ -167,7 +167,7 @@ export default function Project({
             <Button 
               text={ctaButton.text} 
               variant="primary"
-              className="bg-white text-gray-900 hover:bg-gray-100" 
+              className="bg-red-500 text-gray-900 hover:bg-gray-100" 
             />
           </Link>
         </div>
