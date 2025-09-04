@@ -195,32 +195,19 @@ export default function Shop() {
                 </div>
                 
                 <div className="flex gap-3">
-                  {/* Desktop: Full text button */}
-                  <Button 
-                    text="Add to Cart" 
-                    variant="primary"
-                    className="hidden sm:flex flex-1"
-                    onClick={() => handleAddToCart(product)}
-                  />
-                  {/* Mobile: Icon only button */}
+                  {/* Cart Icon Button - All screen sizes */}
                   <Button 
                     variant="primary"
-                    className="sm:hidden flex-1 flex items-center justify-center"
+                    className="flex-1 bg-red-600 hover:bg-red-700 text-white flex items-center justify-center"
                     onClick={() => handleAddToCart(product)}
                   >
-                    <FaShoppingCart className="text-lg" />
+                    <FaShoppingCart className="h-5 w-5" />
                   </Button>
                   
                   <Button
                     text="Quick View"
                     variant="outline"
-                    className="hidden sm:flex border-gray-300 text-gray-700 hover:border-red-600 hover:text-red-600"
-                  />
-                  {/* Mobile: Abbreviated button */}
-                  <Button
-                    text="View"
-                    variant="outline"
-                    className="sm:hidden border-gray-300 text-gray-700 hover:border-red-600 hover:text-red-600 px-4"
+                    className="flex-1 border-gray-300 text-gray-700 hover:border-red-600 hover:text-red-600"
                   />
                 </div>
               </div>
