@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { FaHeart, FaFilter, FaSort } from "react-icons/fa";
+import { FaHeart, FaFilter, FaSort, FaShoppingCart } from "react-icons/fa";
 import Title from "@/components/ui/Title";
 import Button from "@/components/ui/Button";
 import { useCart } from "@/hooks/useCart";
@@ -195,16 +195,32 @@ export default function Shop() {
                 </div>
                 
                 <div className="flex gap-3">
+                  {/* Desktop: Full text button */}
                   <Button 
                     text="Add to Cart" 
                     variant="primary"
-                    className="flex-1"
+                    className="hidden sm:flex flex-1"
                     onClick={() => handleAddToCart(product)}
                   />
+                  {/* Mobile: Icon only button */}
+                  <Button 
+                    variant="primary"
+                    className="sm:hidden flex-1 flex items-center justify-center"
+                    onClick={() => handleAddToCart(product)}
+                  >
+                    <FaShoppingCart className="text-lg" />
+                  </Button>
+                  
                   <Button
                     text="Quick View"
                     variant="outline"
-                    className="border-gray-300 text-gray-700 hover:border-red-600 hover:text-red-600"
+                    className="hidden sm:flex border-gray-300 text-gray-700 hover:border-red-600 hover:text-red-600"
+                  />
+                  {/* Mobile: Abbreviated button */}
+                  <Button
+                    text="View"
+                    variant="outline"
+                    className="sm:hidden border-gray-300 text-gray-700 hover:border-red-600 hover:text-red-600 px-4"
                   />
                 </div>
               </div>

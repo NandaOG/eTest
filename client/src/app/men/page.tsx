@@ -175,18 +175,37 @@ export default function MenPage() {
                   </div>
                   
                   <div className="flex gap-3">
+                    {/* Desktop: Full button with icon and text */}
                     <Button 
                       onClick={() => handleAddToCart(product)}
                       variant="primary"
-                      className="flex-1 bg-red-600 hover:bg-red-700 text-white"
+                      className="hidden sm:flex flex-1 bg-red-600 hover:bg-red-700 text-white"
                     >
                       <FaShoppingCart className="mr-2 h-4 w-4" />
                       Add to Cart
                     </Button>
+                    {/* Mobile: Icon only button */}
+                    <Button 
+                      onClick={() => handleAddToCart(product)}
+                      variant="primary"
+                      className="sm:hidden flex-1 bg-red-600 hover:bg-red-700 text-white flex items-center justify-center"
+                    >
+                      <FaShoppingCart className="h-5 w-5" />
+                    </Button>
+                    
                     <Link href={`/product/${product.id}`}>
                       <Button
                         variant="outline"
-                        className="border-gray-300 text-gray-700 hover:border-red-600 hover:text-red-600"
+                        className="hidden sm:flex border-gray-300 text-gray-700 hover:border-red-600 hover:text-red-600"
+                      >
+                        View
+                      </Button>
+                    </Link>
+                    {/* Mobile: Abbreviated view button */}
+                    <Link href={`/product/${product.id}`} className="sm:hidden">
+                      <Button
+                        variant="outline"
+                        className="border-gray-300 text-gray-700 hover:border-red-600 hover:text-red-600 px-4"
                       >
                         View
                       </Button>

@@ -39,32 +39,33 @@ export default function Navbar() {
         <div className="container mx-auto px-4 md:px-10 lg:px-20 flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
-            <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white hover:text-red-600 transition-colors cursor-pointer">
-              Luxe Apparel
+            <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white hover:text-red-600 transition-colors cursor-pointer">
+              <span className="hidden sm:inline">Luxe Apparel</span>
+              <span className="sm:hidden">Luxe</span>
             </div>
           </Link>
 
           {/* Right Side */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
             {/* Cart */}
             <Link href="/cart" className="relative p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
-              <FaShoppingBag className="text-2xl text-gray-700 dark:text-gray-300 hover:text-red-600 transition-colors" />
+              <FaShoppingBag className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 hover:text-red-600 transition-colors" />
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold">
+                <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-4 h-4 md:w-5 md:h-5 flex items-center justify-center font-semibold text-[10px] md:text-xs">
                   {totalItems}
                 </span>
               )}
             </Link>
 
-            {/* Login */}
+            {/* Login - Responsive */}
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setShowAuthModal(true)}
-              className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium"
+              className="text-gray-700 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium p-2"
             >
-              <User className="h-5 w-5 mr-2" />
-              Login
+              <User className="h-4 w-4 md:h-5 md:w-5 sm:mr-1 md:mr-2" />
+              <span className="hidden md:inline">Login</span>
             </Button>
 
             {/* Mobile Menu Toggle */}

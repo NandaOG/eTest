@@ -26,8 +26,10 @@ export default function Home() {
         <About/>
         <Services/>
         <Project/>
-        <TechStack />
-        <Testimonial/>
+        <div className="hidden md:block">
+          <TechStack />
+        </div>
+        {/* <Testimonial/> */}
         <CTA/>
     </div>
    

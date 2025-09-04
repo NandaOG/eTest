@@ -96,20 +96,20 @@ export default function Hero() {
         </p>
 
         {/* Call to Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12">
           <Button
             text="Shop Collection"
             href="/shop"
             variant="primary"
             size="lg"
-            className="bg-red-600 hover:bg-red-700 text-white px-8 py-4"
+            className="bg-red-600 hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
           />
           <Button
             text="View Lookbook"
             href="/lookbook"
             variant="outline"
             size="lg"
-            className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4"
+            className="border-white text-white hover:bg-white hover:text-gray-900 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
           />
         </div>
 

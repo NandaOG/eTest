@@ -233,8 +233,8 @@ export default function Services({
           </div>
         </div>
         
-        {/* Overlay Navigation Arrows - Top Right */}
-        <div className="absolute top-6 right-6 z-10 flex gap-2">
+        {/* Overlay Navigation Arrows - Desktop only */}
+        <div className="absolute top-4 md:top-6 right-4 md:right-6 z-10 hidden lg:flex gap-2">
           <button
             onClick={handlePrev}
             className="bg-white/90 backdrop-blur-sm p-2.5 rounded-full shadow-lg transition-all duration-300 hover:bg-white hover:scale-110 hover:shadow-xl disabled:opacity-30 disabled:hover:scale-100 disabled:cursor-not-allowed"
@@ -272,10 +272,12 @@ export default function Services({
           {services.map((service) => (
             <div
               key={service.id}
-              className="w-full flex-shrink-0 px-2"
+              className="w-full flex-shrink-0 px-2 flex items-center justify-center"
               style={{ width: `${sliderWidth}px` }}
             >
-              <ServiceCard service={service} />
+              <div className="w-full max-w-4xl mx-auto">
+                <ServiceCard service={service} />
+              </div>
             </div>
           ))}
         </motion.div>

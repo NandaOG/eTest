@@ -135,24 +135,25 @@ export default function Project({
                 <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{collection.title}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">{collection.description}</p>
 
-                <div className="flex gap-3 mt-6">
+                <div className="flex gap-2 md:gap-3 mt-6">
                   <Link href={`/product/${collection.id}`} className="flex-1">
                     <Button
                       variant="outline"
-                      className="w-full border-red-600 text-red-600 hover:bg-red-600 hover:text-white"
+                      className="w-full border-red-600 text-red-600 hover:bg-red-600 hover:text-white text-sm md:text-base"
                     >
                       <span className="flex items-center justify-center">
-                        View Details
-                        <ExternalLink className="ml-2 h-4 w-4" />
+                        <span className="hidden sm:inline">View Details</span>
+                        <span className="sm:hidden">View</span>
+                        <ExternalLink className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
                       </span>
                     </Button>
                   </Link>
 
                   <Button
                     onClick={() => handleAddToCart(collection)}
-                    className="bg-red-600 hover:bg-red-700 text-white px-6"
+                    className="bg-red-600 hover:bg-red-700 text-white px-4 md:px-6"
                   >
-                    <ShoppingCart className="h-4 w-4" />
+                    <ShoppingCart className="h-4 w-4 md:h-4 md:w-4" />
                   </Button>
                 </div>
               </div>
